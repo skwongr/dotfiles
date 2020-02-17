@@ -18,6 +18,19 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Add timestamp to the right
+RPROMPT="%D %D{%L:%M:%S}"
+
+# alias `gs` => `git status`
+alias gs="git status"
+
+# alias `gcommit` => `git commit`
+alias gcommit="git commit"
+
+# alias `whatismyip`
+alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PYTHONSTARTUP=~/.pythonrc
@@ -25,8 +38,5 @@ export PYTHONSTARTUP=~/.pythonrc
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-RPROMPT="%D %D{%L:%M:%S}"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
