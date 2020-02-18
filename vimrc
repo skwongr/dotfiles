@@ -112,9 +112,10 @@ set splitbelow
 set splitright
 
 " Shortcut to splits work
-nnoremap <Leader>x :q<CR>
 nnoremap <Leader>\ :vsp<CR>
 nnoremap <Leader>- :sp<CR>
+nnoremap <Leader>x :q<CR>
+nnoremap <Leader>w :w<CR>
 
 " Case insensitive search
 set ic
