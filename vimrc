@@ -31,6 +31,9 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+" Set leader to space
+let mapleader = " "
+
 " Shortcut to tabular
 vnoremap <leader>: :Tab /:\zs/l0l1<CR>
 vnoremap <leader>= :Tab /=<CR>
@@ -141,7 +144,7 @@ set scrolloff=3       " Minimum lines to keep above and below cursor
 set foldenable        " Auto fold code
 set foldmethod=indent " fold based on indent level
 set foldlevelstart=20
-nnoremap <space> za   " space open/close folds
+" nnoremap <space> za   " space open/close folds
 
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
@@ -191,3 +194,5 @@ nnoremap <C-s> :vs %<CR>
 " Duplicate the current tab
 nnoremap <leader>t :tab split<CR>
 
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
