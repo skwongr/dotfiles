@@ -108,6 +108,11 @@ syntax on
 set splitbelow
 set splitright
 
+" Shortcut to splits work
+nnoremap <Leader>x :q<CR>
+nnoremap <Leader>\ :vsp<CR>
+nnoremap <Leader>- :sp<CR>
+
 " Case insensitive search
 set ic
 set hlsearch  " Higlhight search
@@ -193,9 +198,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 " Search highlighted text
 vnoremap // y/<C-R>"<CR>
 vnoremap /? y:tabnew\|Ack <C-R>"<CR>
-
-" Shortcut to split view
-nnoremap <C-s> :vs %<CR>
 
 " Duplicate the current tab
 nnoremap <leader>t :tab split<CR>
