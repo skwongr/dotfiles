@@ -101,6 +101,9 @@ set expandtab
 set number
 set relativenumber
 
+" show current line cursor is on
+set cursorline
+
 " Set syntax on
 syntax on
 
