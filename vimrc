@@ -200,3 +200,7 @@ nnoremap <leader>t :tab split<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
+
+" Quicker tab movement
+nnoremap <C-h> gT
+nnoremap <C-l> gt
