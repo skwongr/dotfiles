@@ -24,9 +24,6 @@ RPROMPT="%D %D{%L:%M:%S}"
 # alias `gs` => `git status`
 alias gs="git status"
 
-# alias `gcommit` => `git commit`
-alias gcommit="git commit"
-
 # alias `whatismyip`
 alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
