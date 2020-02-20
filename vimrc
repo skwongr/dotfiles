@@ -16,6 +16,7 @@ Plug 'christoomey/vim-system-copy'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'lisposter/vim-blackboard'
+Plug 'luochen1990/rainbow'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -35,6 +36,9 @@ call plug#end()
 
 " Set leader to space
 let mapleader = " "
+
+" Enable Rainbow
+let g:rainbow_active = 1
 
 " Shortcut to tabular
 vnoremap <leader>: :Tab /:\zs/l0l1<CR>
