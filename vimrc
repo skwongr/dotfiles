@@ -184,9 +184,13 @@ inoremap <C-Space> <C-n>
 " Move lines up/down
 nnoremap <leader><Down> :m .+1<CR>==
 nnoremap <leader><Up> :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
 
 vnoremap <leader><Down> :m '>+1<CR>gv=gv
 vnoremap <leader><Up> :m '<-2<CR>gv=gv
+vnoremap <leader>j :m '>+1<CR>gv=gv
+vnoremap <leader>k :m '<-2<CR>gv=gv
 
 " Pretty JSON
 cabbrev pjson %!python -m json.tool
