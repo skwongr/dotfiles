@@ -220,3 +220,4 @@ nnoremap <Leader><Leader> <C-^>
 " Quicker tab movement
 nnoremap <C-h> gT
 nnoremap <C-l> gt
+cnoreabbrev to tabon
