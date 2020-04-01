@@ -177,10 +177,6 @@ nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-" Ctrl+Space for AutoComplete
-inoremap <Nul> <C-n>
-inoremap <C-Space> <C-n>
-
 " Move lines up/down
 nnoremap <leader><Down> :m .+1<CR>==
 nnoremap <leader><Up> :m .-2<CR>==
