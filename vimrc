@@ -26,6 +26,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -70,6 +71,9 @@ cnoreabbrev nag tabnew\|Ag
 " Commentary
 noremap <leader>/ :Commentary<cr>
 autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+
+" EasyMotion
+map \ <Plug>(easymotion-prefix)
 
 " Coc
 " Highlight symbol under cursor on CursorHold
