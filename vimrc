@@ -27,6 +27,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -173,6 +174,10 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 set colorcolumn=160
 set backspace=2 " make backspace work like most other apps
+
+" auto reload files changed outside of vim
+au FocusGained,BufEnter * :checktime
+set autoread
 
 
 " Shortcut to indent
