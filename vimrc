@@ -29,7 +29,13 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-Plug '/usr/local/opt/fzf'
+if !empty(glob('/usr/local/opt/fzf'))
+  " Homebrew install
+  Plug '/usr/local/opt/fzf'
+else
+  " Git install
+  Plug '~/.fzf'
+endif
 Plug 'junegunn/fzf.vim'
 
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
