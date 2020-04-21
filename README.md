@@ -22,5 +22,5 @@ endif
 
 ## tmux
 ```
-if-shell "[ -f ~/dotfiles/tmux.conf ]" 'source ~/dotfiles/tmux.conf'
+source ~/dotfiles/tmux.conf
 ```
