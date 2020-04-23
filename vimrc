@@ -174,7 +174,6 @@ set scrolloff=3       " Minimum lines to keep above and below cursor
 set foldenable        " Auto fold code
 set foldmethod=indent " fold based on indent level
 set foldlevelstart=20
-nnoremap <enter> za   " space open/close folds
 
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
