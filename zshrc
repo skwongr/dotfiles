@@ -27,6 +27,8 @@ alias gs="git status"
 # alias `whatismyip`
 alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+# Disable shell exit with Ctrl-d
+set -o ignoreeof
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
