@@ -29,6 +29,8 @@ alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # alias `sshkeychain`
 alias sshkeychain="keychain $HOME/.ssh/id_rsa && source $HOME/.keychain/$(hostname)-sh"
+# load the keychain if exist
+[ -f $HOME/.keychain/$(hostname)-sh ] && source $HOME/.keychain/$(hostname)-sh
 
 # Disable shell exit with Ctrl-d
 set -o ignoreeof
