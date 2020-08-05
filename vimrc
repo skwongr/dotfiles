@@ -166,6 +166,7 @@ set mouse=a
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
+set noendofline
 set nofixendofline
 set linespace=0       " No extra spaces between rows
 set showmatch         " Show matching brackets/parenthesis
