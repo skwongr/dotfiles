@@ -32,8 +32,8 @@ alias sshkeychain="keychain $HOME/.ssh/id_rsa && source $HOME/.keychain/$(hostna
 # load the keychain if exist
 [ -f $HOME/.keychain/$(hostname)-sh ] && source $HOME/.keychain/$(hostname)-sh
 
-# alias `du -h --max-depth=1`
-alias du1="du -h --max-depth=1"
+# alias `du -h --max-depth=0`
+alias du0="du -h --max-depth=0"
 
 # Disable shell exit with Ctrl-d
 set -o ignoreeof
