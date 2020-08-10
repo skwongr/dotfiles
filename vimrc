@@ -57,6 +57,7 @@ vnoremap <leader>{ :Tab /{<CR>
 map <leader>e :NERDTreeToggle<CR>
 map <C-e> :NERDTreeFind<CR>
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let NERDTreeShowHidden=1
 " let NERDTreeQuitOnOpen = 1
 " Alias :nfind to :NerdTreeFind
 cnoreabbrev nfind NERDTreeFind
