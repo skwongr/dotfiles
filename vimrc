@@ -164,6 +164,9 @@ set confirm
 " Enable use of the mouse for all modes
 set mouse=a
 
+" Set pastetoggle hotkey
+set pastetoggle=<F2>
+
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
