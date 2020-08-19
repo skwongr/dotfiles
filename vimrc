@@ -82,6 +82,7 @@ autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
 
 " EasyMotion
 map \ <Plug>(easymotion-prefix)
+map <C-f> <Plug>(easymotion-f)
 
 " Coc
 " Highlight symbol under cursor on CursorHold
