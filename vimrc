@@ -117,6 +117,8 @@ set expandtab
 " Turn on line numbering. Turn it off with "set nonu"
 set number
 set relativenumber
+noremap <F3> :set invnumber invrelativenumber <CR>
+noremap <F4> :set invrelativenumber <CR>
 
 " show current line cursor is on
 set cursorline
