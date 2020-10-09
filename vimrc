@@ -230,7 +230,7 @@ vnoremap // y/<C-R>"<CR>
 vnoremap /? y:tabnew\|Ack <C-R>"<CR>
 
 " Duplicate the current tab
-nnoremap <leader>t :tab split<CR>
+nnoremap <leader>t :tab split<CR> :NERDTreeFind<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
