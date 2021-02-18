@@ -24,6 +24,9 @@ RPROMPT="%D %D{%L:%M:%S}"
 # alias `gs` => `git status`
 alias gs="git status"
 
+# alias `dockerc` => `docker-compose`
+alias dockerc="docker-compose"
+
 # alias `whatismyip`
 alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
