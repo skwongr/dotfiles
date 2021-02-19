@@ -145,6 +145,20 @@ nnoremap <esc><esc> :noh<CR>
 " Wrap text instead of being on one line
 set lbr
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+" F5 to toggle wrap
+noremap <F5> :call ToggleWrap()<CR>
+function ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+  endif
+endfunction
 
 set wildmenu " Better command-line completion
 set showcmd  " Show partial commands in the last line of the screen
