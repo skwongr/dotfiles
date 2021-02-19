@@ -139,7 +139,7 @@ nnoremap <Leader>w :w<CR>
 set ic
 set hlsearch  " Higlhight search
 set incsearch " Find as you type search
-nnoremap <esc><esc> :noh<CR>
+nnoremap <Leader>h :noh<CR>
 
 " Wrap text instead of being on one line
 set lbr
