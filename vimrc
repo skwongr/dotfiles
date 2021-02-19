@@ -28,6 +28,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'vim-test/vim-test'
+Plug 'preservim/vimux'
 
 if !empty(glob('/usr/local/opt/fzf'))
   " Homebrew install
@@ -84,14 +86,11 @@ autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
 map \ <Plug>(easymotion-prefix)
 map <C-f> <Plug>(easymotion-f)
 
-" Coc
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-" Remap for rename current word
-" nmap <leader>rn <Plug>(coc-rename)
-" Remap for format selected region
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+" vim-test
+let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
+let test#ruby#rspec#executable = "drspec"
+nmap gtf :TestFile<CR>
+nmap gtn :TestNearest<CR>
 
 " Change colorscheme from default to blackboard
 colorscheme blackboard
