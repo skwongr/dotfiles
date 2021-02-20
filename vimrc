@@ -47,6 +47,11 @@ call plug#end()
 " Set leader to space
 let mapleader = " "
 
+" Set Ctrl+j to Esc
+nnoremap <C-j> <esc>
+inoremap <C-j> <esc>
+vnoremap <C-j> <esc>
+
 " Enable Rainbow
 let g:rainbow_active = 1
 
