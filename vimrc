@@ -93,7 +93,7 @@ map <C-f> <Plug>(easymotion-f)
 
 " vim-test
 let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
-let test#ruby#rspec#executable = "drspec"
+" let test#ruby#rspec#executable = "drspec"
 nmap gtf :TestFile<CR>
 nmap gtn :TestNearest<CR>
 
