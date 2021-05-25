@@ -30,6 +30,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
+Plug 'rust-lang/rust.vim'
 
 if !empty(glob('/usr/local/opt/fzf'))
   " Homebrew install
