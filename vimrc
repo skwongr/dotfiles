@@ -266,3 +266,6 @@ nnoremap <C-l> gt
 
 " Quicker newline
 nnoremap <leader><CR> o<ESC>
+
+" Run last macro with ease
+nnoremap <F8> @@
