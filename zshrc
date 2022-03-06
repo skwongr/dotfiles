@@ -38,6 +38,10 @@ alias sshkeychain="keychain $HOME/.ssh/id_rsa && source $HOME/.keychain/$(hostna
 # alias `du -h --max-depth=0`
 alias du0="du -h --max-depth=0"
 
+# tmux alias
+alias tl="tmux ls"
+alias ta="tmux a"
+
 # Disable shell exit with Ctrl-d
 set -o ignoreeof
 
