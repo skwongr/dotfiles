@@ -13,3 +13,4 @@ endif' >> ~/.vimrc
 
 # install to .tmux.conf
 echo "source ~/dotfiles/tmux.conf" >> ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
