@@ -33,7 +33,10 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- Hide virtual text
 require('toggle_lsp_diagnostics').init { virtual_text = false, update_in_insert = false }
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.solargraph.setup{}
 
@@ -42,6 +45,7 @@ nvim_lsp.solargraph.setup{}
 local servers = { "solargraph" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,

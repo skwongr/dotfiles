@@ -16,6 +16,9 @@ return require('packer').startup(function(use)
   -- My plugins here
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -23,3 +26,21 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
+-- Setup nvim-cmp
+local cmp = require'cmp'
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<C-n'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  })
+})
+-- filetype specific
+cmp.setup.filetype('ruby', {
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' }
+  }, {
+    { name = 'buffer' }
+  })
+})
