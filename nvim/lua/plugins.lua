@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -10,7 +10,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'ap/vim-css-color'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'editorconfig/editorconfig-vim'
