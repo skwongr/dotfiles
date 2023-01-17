@@ -11,7 +11,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
