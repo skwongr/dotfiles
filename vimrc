@@ -187,11 +187,13 @@ set confirm
 " Enable use of the mouse for all modes
 set mouse=a
 " support for wide screen
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
-end
+if !has('nvim')
+  if has("mouse_sgr")
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  end
+endif
 
 " Set pastetoggle hotkey
 set pastetoggle=<F2>
