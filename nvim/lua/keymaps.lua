@@ -8,4 +8,4 @@ local map = function(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "tlv", "<Plug>(toggle-lsp-diag-vtext)", { silent = true })
+map("n", "<leader>lv", "<Plug>(toggle-lsp-diag-vtext)", { silent = true })
