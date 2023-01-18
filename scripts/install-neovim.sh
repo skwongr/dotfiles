@@ -1,9 +1,9 @@
 # install neovim
-# if [ -x "$(command -v brew)" ]; then
-#   brew install neovim
-# else
-#   sudo apt install -y neovim
-# fi
+if [ -x "$(command -v brew)" ]; then
+  brew install neovim ripgrep
+else
+  sudo apt install -y neovim ripgrep
+fi
 
 # symlink configs
 mkdir -p ~/.config/nvim

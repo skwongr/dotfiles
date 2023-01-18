@@ -13,12 +13,22 @@ local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- My plugins here
+  -- LSP
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make'
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -44,3 +54,10 @@ cmp.setup.filetype('ruby', {
     { name = 'buffer' }
   })
 })
+
+-- Setup telescope
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
+
+require('telescope').load_extension('fzf')
