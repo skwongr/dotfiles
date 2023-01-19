@@ -38,11 +38,9 @@ require('toggle_lsp_diagnostics').init { virtual_text = false, update_in_insert 
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-nvim_lsp.solargraph.setup{}
-
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "solargraph" }
+local servers = { "solargraph", "tsserver" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
