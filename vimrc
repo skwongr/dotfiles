@@ -95,9 +95,9 @@ map <C-f> <Plug>(easymotion-f)
 " vim-test
 let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
 " let test#ruby#rspec#executable = "drspec"
-nmap gtf :VimuxCloseRunner<CR>:TestFile<CR>
-nmap gtn :VimuxCloseRunner<CR>:TestNearest<CR>
-nmap gvx :VimuxCloseRunner<CR>
+nnoremap gtf :VimuxCloseRunner<CR>:TestFile<CR>
+nnoremap gtn :VimuxCloseRunner<CR>:TestNearest<CR>
+nnoremap gvx :VimuxCloseRunner<CR>
 
 " Change colorscheme from default to blackboard
 colorscheme blackboard
