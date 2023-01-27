@@ -1,11 +1,17 @@
-local map = function(mode, lhs, rhs, opts)
-  local options = { noremap = true }
+local wk = require('which-key')
+local telescope_builtin = require('telescope.builtin')
 
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
-map("n", "<leader>lv", "<Plug>(toggle-lsp-diag-vtext)", { silent = true })
+wk.register({
+  ['<leader>'] = {
+    name = 'Leader',
+    f = {
+      name = 'Find',
+      f = { telescope_builtin.find_files, 'Find files' },
+      g = { telescope_builtin.live_grep, 'Live grep' },
+    },
+    l = {
+      name = 'Language',
+      v = { '<Plug>(toggle-lsp-diag-vtext)', 'Toggle virtual text' },
+    }
+  },
+})
