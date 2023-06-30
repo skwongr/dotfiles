@@ -35,7 +35,11 @@ require('packer').startup(function(use)
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup {}
+      require("which-key").setup {
+        layout = {
+          height = { min = 2, max = 6 },
+        }
+      }
     end
   }
 
