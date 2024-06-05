@@ -68,6 +68,11 @@ cmp.setup({
     ['<C-n'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
+  snippet = {
+    expand = function(args)
+      vim.snippet.expand(args.body)
+    end,
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' }
   }, {
