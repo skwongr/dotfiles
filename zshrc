@@ -46,6 +46,9 @@ alias nv="nvim"
 alias tl="tmux ls"
 alias ta="tmux a"
 
+# bundle exec alias
+alias be="bundle exec"
+
 # Disable shell exit with Ctrl-d
 set -o ignoreeof
 
