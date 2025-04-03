@@ -273,3 +273,7 @@ nnoremap <leader><CR> o<ESC>
 
 " Run last macro with ease
 nnoremap <F8> @@
+
+" fix filetypes
+autocmd BufNewFile,BufRead *.gjs set filetype=javascript.glimmer
+autocmd BufNewFile,BufRead *.gts set filetype=typescript.glimmer
