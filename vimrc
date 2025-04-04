@@ -86,7 +86,7 @@ cnoreabbrev nag tabnew\|Ag
 
 " Commentary
 noremap <leader>/ :Commentary<cr>
-autocmd FileType html.handlebars setlocal commentstring={{!--\ %s\ --}}
+autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
 
 " EasyMotion
 map \ <Plug>(easymotion-prefix)
