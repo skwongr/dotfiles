@@ -196,7 +196,9 @@ if !has('nvim')
 endif
 
 " Set pastetoggle hotkey
-set pastetoggle=<F2>
+if !has('nvim')
+  set pastetoggle=<F2>
+endif
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
