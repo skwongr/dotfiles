@@ -257,6 +257,7 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " Search highlighted text
 vnoremap // y/<C-R>"<CR>
+nnoremap /w yiw/<C-R>"<CR>
 vnoremap /? y:tabnew\|Ack <C-R>"<CR>
 
 " Duplicate the current tab
