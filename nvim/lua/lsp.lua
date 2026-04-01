@@ -3,38 +3,30 @@ local nvim_lsp = require('lspconfig')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-  --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  local function map(key, fn, desc)
+    vim.keymap.set('n', key, fn, { buffer = bufnr, silent = true, desc = desc })
+  end
 
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
+  -- Open in new tab, then jump
+  local function tab_jump(method)
+    return function() vim.cmd('tab split') method() end
+  end
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>tab split | lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>tab split | lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>tab split | lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  -- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  -- buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>tab split | lua vim.lsp.buf.references()<CR>', opts)
-  -- buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
+  map('gD', tab_jump(vim.lsp.buf.declaration), 'LSP declaration')
+  map('gd', tab_jump(vim.lsp.buf.definition), 'LSP definition')
+  map('K', vim.lsp.buf.hover, 'LSP hover')
+  map('gi', tab_jump(vim.lsp.buf.implementation), 'LSP implementation')
+  map('<leader>lk', vim.lsp.buf.signature_help, 'LSP signature help')
+  map('<leader>rn', vim.lsp.buf.rename, 'LSP rename')
+  map('gr', tab_jump(vim.lsp.buf.references), 'LSP references')
+  map('[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
+  map(']d', vim.diagnostic.goto_next, 'Next diagnostic')
 end
 
 -- Hide virtual text
-require('toggle_lsp_diagnostics').init { virtual_text = false, update_in_insert = false }
+vim.diagnostic.config({ virtual_text = false, update_in_insert = false })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
