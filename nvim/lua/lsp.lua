@@ -1,4 +1,5 @@
 local nvim_lsp = require('lspconfig')
+local lsp_configs = require('lspconfig.configs')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -32,13 +33,29 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "solargraph", "terraformls", "tflint", "ts_ls" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+local function setup_server(name)
+  if not lsp_configs[name] then
+    local ok, config = pcall(require, 'lspconfig.configs.' .. name)
+    if ok then
+      lsp_configs[name] = config
+    end
+  end
+
+  local server = lsp_configs[name]
+  if not server then
+    return
+  end
+
+  server.setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-    }
-  }
+    },
+  })
+end
+
+local servers = { 'solargraph', 'terraformls', 'tflint', 'ts_ls' }
+for _, lsp in ipairs(servers) do
+  setup_server(lsp)
 end

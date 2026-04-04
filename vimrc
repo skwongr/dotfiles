@@ -1,5 +1,9 @@
 set encoding=utf-8
 
+" vim-polyglot's built-in sleuth hook is erroring under Neovim startup.
+" Keep the language bundles, but disable only its autoindent detector.
+let g:polyglot_disabled = ['autoindent']
+
 " Install vim-plug and config plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
