@@ -24,3 +24,8 @@ endif
 ```
 source ~/dotfiles/tmux.conf
 ```
+
+## WezTerm
+```
+dofile(os.getenv("HOME") .. "/dotfiles/wezterm.lua")
+```
