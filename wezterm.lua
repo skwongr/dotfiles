@@ -17,5 +17,9 @@ config.enable_kitty_keyboard = true
 config.scrollback_lines = 999999
 config.window_close_confirmation = 'NeverPrompt'
 
+wezterm.on('mux-is-process-stateful', function(_proc)
+  return false
+end)
+
 -- Finally, return the configuration to wezterm:
 return config
