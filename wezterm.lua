@@ -12,8 +12,7 @@ local config = wezterm.config_builder()
 
 -- or, changing the font size and color scheme.
 config.font_size = 18
-config.confirm_close_pane = false
--- config.color_scheme = 'AdventureTime'
+config.window_close_confirmation = 'NeverPrompt'
 
 -- Finally, return the configuration to wezterm:
 return config
