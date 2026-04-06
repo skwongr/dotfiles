@@ -22,5 +22,9 @@ wezterm.on('mux-is-process-stateful', function(_proc)
   return false
 end)
 
+config.keys = {
+  { key = 'Enter', mods = 'SHIFT', action = wezterm.action.SendString '\n' },
+}
+
 -- Finally, return the configuration to wezterm:
 return config
