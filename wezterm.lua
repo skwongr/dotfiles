@@ -11,9 +11,8 @@ local config = wezterm.config_builder()
 -- config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
-config.font_size = 18
+config.font_size = 20
 config.adjust_window_size_when_changing_font_size = false
-config.enable_kitty_keyboard = true
 config.hide_tab_bar_if_only_one_tab = true
 config.scrollback_lines = 999999
 config.window_close_confirmation = 'NeverPrompt'
