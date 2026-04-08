@@ -63,6 +63,7 @@ require('lazy').setup({
     end,
   },
 }, {
+  rocks = { enabled = false },
   performance = {
     rtp = {
       reset = false,
