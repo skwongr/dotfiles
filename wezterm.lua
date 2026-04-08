@@ -11,6 +11,7 @@ local config = wezterm.config_builder()
 -- config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
+config.front_end = 'WebGpu'
 config.font_size = 20
 config.adjust_window_size_when_changing_font_size = false
 config.hide_tab_bar_if_only_one_tab = true
