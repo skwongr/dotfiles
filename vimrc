@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-endwise'
 Plug 'vim-test/vim-test'
@@ -27,9 +26,6 @@ let mapleader = " "
 nnoremap <C-j> <esc>
 inoremap <C-j> <esc>
 vnoremap <C-j> <esc>
-
-" Commentary
-autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
 
 " vim-test
 let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }

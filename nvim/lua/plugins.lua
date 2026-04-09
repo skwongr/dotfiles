@@ -120,6 +120,13 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'handlebars',
+  callback = function()
+    vim.bo.commentstring = '{{! %s }}'
+  end,
+})
+
 -- Built-in autocomplete (Neovim 0.12+)
 vim.o.completeopt = 'menu,menuone,noselect'
 vim.o.autocomplete = true
