@@ -10,6 +10,7 @@ if not vim.uv.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.o.termguicolors = true
 
 require('lazy').setup({
   -- LSP
@@ -17,6 +18,18 @@ require('lazy').setup({
   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   { 'nvim-lualine/lualine.nvim', opts = {} },
+  {
+    'nvim-tree/nvim-tree.lua',
+    opts = {
+      filters = { dotfiles = false },
+    },
+    keys = {
+      { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle file tree' },
+      { '<C-e>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in tree' },
+      { '<leader>x', '<cmd>NvimTreeClose<CR><cmd>q<CR>', desc = 'Close tree and quit' },
+      { '<leader>t', '<cmd>tab split<CR><cmd>NvimTreeFindFile<CR>', desc = 'Duplicate tab and find file' },
+    },
+  },
 
   {
     'nvim-telescope/telescope.nvim',

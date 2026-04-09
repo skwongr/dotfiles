@@ -16,7 +16,6 @@ Plug 'lisposter/vim-blackboard'
 Plug 'luochen1990/rainbow'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'scrooloose/nerdtree'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
@@ -44,15 +43,6 @@ let g:rainbow_active = 1
 vnoremap <leader>: :Tab /:\zs/l0l1<CR>
 vnoremap <leader>= :Tab /=<CR>
 vnoremap <leader>{ :Tab /{<CR>
-
-" NerdTree
-map <leader>e :NERDTreeToggle<CR>
-map <C-e> :NERDTreeFind<CR>
-let g:NERDTreeNodeDelimiter = "\u00a0"
-let NERDTreeShowHidden=1
-" let NERDTreeQuitOnOpen = 1
-" Alias :nfind to :NerdTreeFind
-cnoreabbrev nfind NERDTreeFind
 
 " Commentary
 autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
@@ -108,7 +98,7 @@ set splitright
 " Shortcut to splits work
 nnoremap <Leader>\ :vsp<CR>
 nnoremap <Leader>- :sp<CR>
-nnoremap <Leader>x :NERDTreeClose<CR>:q<CR>
+nnoremap <Leader>x :q<CR>
 nnoremap <Leader>w :w<CR>
 
 " Case insensitive search
@@ -229,7 +219,7 @@ vnoremap // y/<C-R>"<CR>
 nnoremap /w yiw/<C-R>"<CR>
 
 " Duplicate the current tab
-nnoremap <leader>t :tab split<CR> :NERDTreeFind<CR>
+nnoremap <leader>t :tab split<CR>
 cnoreabbrev tn tabnew
 
 " Switch between the last two files
