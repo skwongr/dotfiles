@@ -17,6 +17,7 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
   { 'NvChad/nvim-colorizer.lua', opts = {} },
+  'HiPhish/rainbow-delimiters.nvim',
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',

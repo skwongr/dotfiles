@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'lisposter/vim-blackboard'
-Plug 'luochen1990/rainbow'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'skywind3000/asyncrun.vim'
@@ -34,9 +33,6 @@ let mapleader = " "
 nnoremap <C-j> <esc>
 inoremap <C-j> <esc>
 vnoremap <C-j> <esc>
-
-" Enable Rainbow
-let g:rainbow_active = 1
 
 " Commentary
 autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
