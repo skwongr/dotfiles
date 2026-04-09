@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
-Plug 'godlygeek/tabular'
 Plug 'lisposter/vim-blackboard'
 Plug 'luochen1990/rainbow'
 Plug 'mustache/vim-mustache-handlebars'
@@ -38,11 +37,6 @@ vnoremap <C-j> <esc>
 
 " Enable Rainbow
 let g:rainbow_active = 1
-
-" Shortcut to tabular
-vnoremap <leader>: :Tab /:\zs/l0l1<CR>
-vnoremap <leader>= :Tab /=<CR>
-vnoremap <leader>{ :Tab /{<CR>
 
 " Commentary
 autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}

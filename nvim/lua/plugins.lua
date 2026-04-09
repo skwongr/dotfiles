@@ -32,6 +32,16 @@ require('lazy').setup({
   },
 
   {
+    'godlygeek/tabular',
+    cmd = 'Tab',
+    keys = {
+      { '<leader>:', ':Tab /:\\zs/l0l1<CR>', mode = 'v', desc = 'Align on colon' },
+      { '<leader>=', ':Tab /=<CR>', mode = 'v', desc = 'Align on =' },
+      { '<leader>{', ':Tab /{<CR>', mode = 'v', desc = 'Align on {' },
+    },
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
