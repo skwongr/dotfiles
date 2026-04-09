@@ -1,5 +1,8 @@
 local telescope_builtin = require('telescope.builtin')
 
+vim.keymap.set({'n', 'v'}, 'cp', '"+y', { desc = 'Copy to system clipboard' })
+vim.keymap.set('n', 'cv', '"+p', { desc = 'Paste from system clipboard' })
+
 vim.keymap.set('n', '<leader>/', 'gcc', { remap = true, desc = 'Toggle comment' })
 vim.keymap.set('v', '<leader>/', 'gc', { remap = true, desc = 'Toggle comment' })
 
