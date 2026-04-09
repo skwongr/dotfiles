@@ -1,9 +1,5 @@
 set encoding=utf-8
 
-" vim-polyglot's built-in sleuth hook is erroring under Neovim startup.
-" Keep the language bundles, but disable only its autoindent detector.
-let g:polyglot_disabled = ['autoindent']
-
 " Install vim-plug and config plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -17,33 +13,19 @@ Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'lisposter/vim-blackboard'
 Plug 'luochen1990/rainbow'
-Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
 Plug 'rust-lang/rust.vim'
-
-if !empty(glob('/usr/local/opt/fzf'))
-  " Homebrew install
-  Plug '/usr/local/opt/fzf'
-else
-  " Git install
-  Plug '~/.fzf'
-endif
-Plug 'junegunn/fzf.vim'
 
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
@@ -74,22 +56,7 @@ let NERDTreeShowHidden=1
 " Alias :nfind to :NerdTreeFind
 cnoreabbrev nfind NERDTreeFind
 
-" Ack.vim config
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-elseif executable('ack-grep')
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-endif
-let g:ackhighlight = 1
-" Alias :find to :Ack
-cnoreabbrev find tabnew\|Ack
-
-" FZF
-nnoremap <C-p> :tabnew<CR>:GFiles<CR>
-cnoreabbrev nag tabnew\|Ag
-
 " Commentary
-noremap <leader>/ :Commentary<cr>
 autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
 
 " EasyMotion
@@ -262,7 +229,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 " Search highlighted text
 vnoremap // y/<C-R>"<CR>
 nnoremap /w yiw/<C-R>"<CR>
-vnoremap /? y:tabnew\|Ack <C-R>"<CR>
 
 " Duplicate the current tab
 nnoremap <leader>t :tab split<CR> :NERDTreeFind<CR>

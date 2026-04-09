@@ -69,6 +69,13 @@ require('lazy').setup({
   },
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'TelescopePrompt',
+  callback = function()
+    vim.bo.autocomplete = false
+  end,
+})
+
 -- Built-in autocomplete (Neovim 0.12+)
 vim.o.completeopt = 'menu,menuone,noselect'
 vim.o.autocomplete = true
