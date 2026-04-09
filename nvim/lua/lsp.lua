@@ -5,6 +5,7 @@ local lsp_configs = require('lspconfig.configs')
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+  vim.lsp.completion.enable(true, client.id, bufnr)
 
   local function map(key, fn, desc)
     vim.keymap.set('n', key, fn, { buffer = bufnr, silent = true, desc = desc })
@@ -29,7 +30,7 @@ end
 -- Hide virtual text
 vim.diagnostic.config({ virtual_text = false, update_in_insert = false })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
