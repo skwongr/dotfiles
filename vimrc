@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'lisposter/vim-blackboard'
 Plug 'mustache/vim-mustache-handlebars'

@@ -20,6 +20,7 @@ require('lazy').setup({
   'HiPhish/rainbow-delimiters.nvim',
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   { 'kylechui/nvim-surround', opts = {} },
+  'christoomey/vim-sort-motion',
   {
     'folke/flash.nvim',
     opts = {},
