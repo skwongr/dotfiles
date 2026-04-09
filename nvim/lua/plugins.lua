@@ -19,6 +19,7 @@ require('lazy').setup({
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   'HiPhish/rainbow-delimiters.nvim',
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  { 'kylechui/nvim-surround', opts = {} },
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',
