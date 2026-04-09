@@ -18,6 +18,7 @@ require('lazy').setup({
   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   'HiPhish/rainbow-delimiters.nvim',
+  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',
