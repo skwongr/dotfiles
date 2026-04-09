@@ -24,6 +24,9 @@ vim.keymap.set('v', '/?', function()
   require('telescope.builtin').grep_string()
 end, { desc = 'Search selected text' })
 
+vim.keymap.set('n', 'ttf', '<cmd>TestFile<CR>', { desc = 'Test file' })
+vim.keymap.set('n', 'ttn', '<cmd>TestNearest<CR>', { desc = 'Test nearest' })
+
 vim.keymap.set('n', '<leader>lv', function()
   local cfg = vim.diagnostic.config()
   vim.diagnostic.config({ virtual_text = not cfg.virtual_text })

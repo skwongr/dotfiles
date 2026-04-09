@@ -9,11 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'skywind3000/asyncrun.vim'
-Plug 'vim-test/vim-test'
-Plug 'preservim/vimux'
-Plug 'rust-lang/rust.vim'
-
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 call plug#end()
@@ -25,13 +20,6 @@ let mapleader = " "
 nnoremap <C-j> <esc>
 inoremap <C-j> <esc>
 vnoremap <C-j> <esc>
-
-" vim-test
-let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
-" let test#ruby#rspec#executable = "drspec"
-nnoremap ttf :VimuxCloseRunner<CR>:TestFile<CR>
-nnoremap ttn :VimuxCloseRunner<CR>:TestNearest<CR>
-nnoremap ttx :VimuxCloseRunner<CR>
 
 " Set backup, swap locations
 set undodir=~/.vim/.undo//
