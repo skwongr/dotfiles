@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'lisposter/vim-blackboard'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-endwise'
@@ -38,10 +37,6 @@ let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
 nnoremap ttf :VimuxCloseRunner<CR>:TestFile<CR>
 nnoremap ttn :VimuxCloseRunner<CR>:TestNearest<CR>
 nnoremap ttx :VimuxCloseRunner<CR>
-
-" Change colorscheme from default to blackboard
-colorscheme blackboard
-
 
 " Set backup, swap locations
 set undodir=~/.vim/.undo//

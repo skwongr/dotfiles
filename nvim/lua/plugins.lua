@@ -16,6 +16,14 @@ require('lazy').setup({
   -- LSP
   'neovim/nvim-lspconfig',
   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+  {
+    'lisposter/vim-blackboard',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd('colorscheme blackboard')
+    end,
+  },
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   'HiPhish/rainbow-delimiters.nvim',
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
