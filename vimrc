@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
