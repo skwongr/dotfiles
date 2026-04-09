@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
 Plug 'godlygeek/tabular'

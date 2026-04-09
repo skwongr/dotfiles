@@ -16,6 +16,7 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
   { 'NvChad/nvim-colorizer.lua', opts = {} },
+  { 'nvim-lualine/lualine.nvim', opts = {} },
 
   {
     'nvim-telescope/telescope.nvim',
