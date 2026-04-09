@@ -20,6 +20,13 @@ require('lazy').setup({
   'HiPhish/rainbow-delimiters.nvim',
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   { 'kylechui/nvim-surround', opts = {} },
+  {
+    'folke/flash.nvim',
+    opts = {},
+    keys = {
+      { '<C-f>', function() require('flash').jump() end, mode = { 'n', 'x', 'o' }, desc = 'Flash' },
+    },
+  },
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',

@@ -15,7 +15,6 @@ Plug 'lisposter/vim-blackboard'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-endwise'
-Plug 'easymotion/vim-easymotion'
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
 Plug 'rust-lang/rust.vim'
@@ -34,10 +33,6 @@ vnoremap <C-j> <esc>
 
 " Commentary
 autocmd FileType html.handlebars setlocal commentstring={{!\ %s\ }}
-
-" EasyMotion
-map \ <Plug>(easymotion-prefix)
-map <C-f> <Plug>(easymotion-f)
 
 " vim-test
 let test#strategy = { 'nearest': 'vimux', 'file': 'vimux' }
