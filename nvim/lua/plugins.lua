@@ -43,6 +43,11 @@ require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     opts = {
       filters = { dotfiles = false },
+      on_attach = function(bufnr)
+        local api = require('nvim-tree.api')
+        api.config.mappings.default_on_attach(bufnr)
+        vim.keymap.set('n', 't', api.node.open.tab, { buffer = bufnr, desc = 'Open in new tab' })
+      end,
     },
     keys = {
       { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle file tree' },
