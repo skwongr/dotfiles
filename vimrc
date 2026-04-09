@@ -10,7 +10,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'skywind3000/asyncrun.vim'
-Plug 'tpope/vim-endwise'
 Plug 'vim-test/vim-test'
 Plug 'preservim/vimux'
 Plug 'rust-lang/rust.vim'

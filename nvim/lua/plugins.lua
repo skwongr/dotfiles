@@ -29,6 +29,7 @@ require('lazy').setup({
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   { 'kylechui/nvim-surround', opts = {} },
   'christoomey/vim-sort-motion',
+  'tpope/vim-endwise',
   {
     'folke/flash.nvim',
     opts = {},
