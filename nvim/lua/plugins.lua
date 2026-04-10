@@ -42,7 +42,7 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     opts = {
-      filters = { dotfiles = false },
+      filters = { dotfiles = false, git_ignored = false },
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
         api.config.mappings.default_on_attach(bufnr)
