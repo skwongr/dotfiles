@@ -94,7 +94,10 @@ require('lazy').setup({
       vim.api.nvim_create_autocmd('FileType', {
         callback = function()
           local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
-          if lang and not vim.list_contains(require('nvim-treesitter').get_installed(), lang) then
+          if not lang then return end
+          local available = require('nvim-treesitter').get_available()
+          if not vim.list_contains(available, lang) then return end
+          if not vim.list_contains(require('nvim-treesitter').get_installed(), lang) then
             require('nvim-treesitter').install(lang)
           end
           pcall(vim.treesitter.start)
