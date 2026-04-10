@@ -86,25 +86,19 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
-    build = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
+    build = ':TSUpdate',
     config = function()
-      require('nvim-treesitter').setup({
-        highlight = {
-          enable = true,
+      require('nvim-treesitter').setup()
 
-          -- Disable treesitter highlight for larger files.
-          disable = function(lang, buf)
-            local max_filesize = 100 * 1024 -- 100 KB
-            local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-              return true
-            end
-          end,
-          additional_vim_regex_highlighting = false,
-        },
+      -- Auto-install parser and start treesitter
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
+          if lang and not vim.list_contains(require('nvim-treesitter').get_installed(), lang) then
+            require('nvim-treesitter').install(lang)
+          end
+          pcall(vim.treesitter.start)
+        end,
       })
     end,
   },
