@@ -21,7 +21,10 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.keymap.set('v', '/?', function()
-  require('telescope.builtin').grep_string()
+  vim.cmd('normal! y')
+  local text = vim.fn.getreg('"')
+  vim.cmd('tabnew')
+  require('telescope.builtin').grep_string({ search = text })
 end, { desc = 'Search selected text' })
 
 vim.keymap.set('n', 'ttf', '<cmd>TestFile<CR>', { desc = 'Test file' })
