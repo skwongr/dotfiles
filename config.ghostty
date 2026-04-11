@@ -1,0 +1,7 @@
+theme=IBM 5153 CGA (Black)
+#theme=12-bit Rainbow
+#theme=GitHub Dark
+
+font-size=18
+scrollback-limit=999999
+keybind = shift+enter=text:\n

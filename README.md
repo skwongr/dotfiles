@@ -8,24 +8,29 @@ Clone onto your computer:
 
 `git clone git://github.com/skwongr/dotfiles.git ~/dotfiles`
 
-## vimrc
+## vimrc (~/.vimrc)
 ```
 if filereadable($HOME . "/dotfiles/vimrc")
   source ~/dotfiles/vimrc
 endif
 ```
 
-## zshrc
+## zshrc (~/.zshrc)
 ```
 [[ -f ~/dotfiles/zshrc ]] && source ~/dotfiles/zshrc
 ```
 
-## tmux
+## tmux (~/.tmux.conf)
 ```
 source ~/dotfiles/tmux.conf
 ```
 
-## WezTerm
+## Ghostty (~/.config/ghostty/config)
+```
+config-file=~/dotfiles/config.ghostty
+```
+
+## WezTerm (~/.wezterm.lua)
 ```
 dofile(os.getenv("HOME") .. "/dotfiles/wezterm.lua")
 ```
