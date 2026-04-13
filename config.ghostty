@@ -1,6 +1,5 @@
-#theme=IBM 5153 CGA (Black)
-theme=12-bit Rainbow
-#theme=GitHub Dark
+# theme=12-bit Rainbow
+theme=iTerm2 Default
 
 font-size=18
 scrollback-limit=999999
