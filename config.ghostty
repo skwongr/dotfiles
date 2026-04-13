@@ -3,7 +3,8 @@ theme=iTerm2 Default
 
 font-size=18
 mouse-scroll-multiplier=0.5
-scrollback-limit=999999
+# scrollback buffer in bytes
+scrollback-limit=99999999
 confirm-close-surface=false
 
 # key binding
