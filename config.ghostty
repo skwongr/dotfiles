@@ -2,6 +2,9 @@
 theme=iTerm2 Default
 
 font-size=18
+mouse-scroll-multiplier=0.5
 scrollback-limit=999999
 confirm-close-surface=false
+
+# key binding
 keybind = shift+enter=text:\n
