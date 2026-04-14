@@ -30,7 +30,7 @@ require('lazy').setup({
   { 'kylechui/nvim-surround', opts = {} },
   'christoomey/vim-sort-motion',
   'tpope/vim-endwise',
-  'vim-test/vim-test',
+  { 'vim-test/vim-test', config = function() vim.g['test#strategy'] = 'neovim' end },
   {
     'folke/flash.nvim',
     opts = {},
