@@ -41,15 +41,43 @@ require('lazy').setup({
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',
-    opts = {
-      filters = { dotfiles = false, git_ignored = false },
-      actions = { open_file = { window_picker = { enable = false } } },
-      on_attach = function(bufnr)
-        local api = require('nvim-tree.api')
-        api.config.mappings.default_on_attach(bufnr)
-        vim.keymap.set('n', 't', api.node.open.tab, { buffer = bufnr, desc = 'Open in new tab' })
-      end,
-    },
+    config = function()
+      require('nvim-tree').setup({
+        filters = { dotfiles = false, git_ignored = false },
+        actions = {
+          open_file = {
+            window_picker = { enable = false },
+            quit_on_open = false,
+          },
+        },
+        on_attach = function(bufnr)
+          local api = require('nvim-tree.api')
+          api.config.mappings.default_on_attach(bufnr)
+          vim.keymap.set('n', 't', api.node.open.tab, { buffer = bufnr, desc = 'Open in new tab' })
+
+          local function edit_in_prev_win()
+            local ok, node = pcall(api.tree.get_node_under_cursor)
+            if not ok or not node then return end
+            -- let nvim-tree handle directories normally
+            if node.type == 'directory' then
+              api.node.open.edit()
+              return
+            end
+            -- jump to previous window, then tell nvim-tree to open there
+            local prev = vim.fn.winnr('#')
+            if prev > 0 and prev ~= vim.fn.winnr() then
+              vim.cmd(prev .. 'wincmd w')
+            end
+            if node.absolute_path then
+              vim.cmd('edit ' .. vim.fn.fnameescape(node.absolute_path))
+            end
+          end
+          vim.keymap.set('n', '<CR>', edit_in_prev_win, { buffer = bufnr, noremap = true, desc = 'Open in previous window' })
+          vim.keymap.set('n', 'o', edit_in_prev_win, { buffer = bufnr, noremap = true, desc = 'Open in previous window' })
+          vim.keymap.set('n', '<2-LeftMouse>', edit_in_prev_win, { buffer = bufnr, noremap = true, desc = 'Open in previous window' })
+        end,
+      })
+    end,
     keys = {
       { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle file tree' },
       { '<C-e>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in tree' },
