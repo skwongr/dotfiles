@@ -23,7 +23,9 @@ source $ZSH/oh-my-zsh.sh
 RPROMPT="%D %D{%L:%M:%S}"
 
 # alias `gs` => `git status`
-alias gs="git status"
+alias gs="git -c color.status=always status"
+alias gd="git diff --color=always"
+alias gds="git diff --staged --color=always"
 
 # alias `dockerc` => `docker-compose`
 alias dockerc="docker-compose"
