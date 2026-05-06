@@ -8,13 +8,6 @@ Clone onto your computer:
 
 `git clone git://github.com/skwongr/dotfiles.git ~/dotfiles`
 
-## vimrc (~/.vimrc)
-```
-if filereadable($HOME . "/dotfiles/vimrc")
-  source ~/dotfiles/vimrc
-endif
-```
-
 ## zshrc (~/.zshrc)
 ```
 [[ -f ~/dotfiles/zshrc ]] && source ~/dotfiles/zshrc
@@ -23,6 +16,19 @@ endif
 ## tmux (~/.tmux.conf)
 ```
 source ~/dotfiles/tmux.conf
+```
+
+## vimrc (~/.vimrc)
+```
+if filereadable($HOME . "/dotfiles/vimrc")
+  source ~/dotfiles/vimrc
+endif
+```
+
+## nvim
+```
+ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/nvim/lua ~/.config/nvim/lua
 ```
 
 ## Ghostty (~/.config/ghostty/config)
