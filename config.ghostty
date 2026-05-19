@@ -7,5 +7,7 @@ mouse-scroll-multiplier=0.5
 scrollback-limit=99999999
 confirm-close-surface=false
 
+bell-features=system
+
 # key binding
 keybind = shift+enter=text:\n
