@@ -162,7 +162,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " Search highlighted text
 vnoremap // y/<C-R>"<CR>
-nnoremap /w yiw/<C-R>"<CR>
 
 " Duplicate the current tab
 nnoremap <leader>t :tab split<CR>
