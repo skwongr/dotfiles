@@ -27,6 +27,15 @@ alias gs="git -c color.status=always status"
 alias gd="git diff --color=always"
 alias gds="git diff --staged --color=always"
 
+gporigin() {
+  local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+  git push -u origin ${current_branch}
+}
+
+gpforce() {
+  git push --force
+}
+
 # alias `dockerc` => `docker-compose`
 alias dockerc="docker-compose"
 
