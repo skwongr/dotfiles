@@ -61,6 +61,10 @@ alias ta="tmux a"
 # bundle exec alias
 alias be="bundle exec"
 
+cdmkr() {
+  mkdir -p $1 && cd $1
+}
+
 # Disable shell exit with Ctrl-d
 set -o ignoreeof
 
