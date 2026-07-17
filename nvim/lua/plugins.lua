@@ -42,6 +42,13 @@ require('lazy').setup({
   {
     'esmuellert/codediff.nvim',
     cmd = 'CodeDiff',
+    opts = {
+      explorer = {
+        width = 30,
+        view_mode = "tree",
+        focus_on_select = true,
+      }
+    },
     keys = {
       { '<leader>gd', '<cmd>CodeDiff<CR>', desc = 'Open git diff' },
     },
