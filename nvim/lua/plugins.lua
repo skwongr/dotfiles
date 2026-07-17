@@ -40,6 +40,13 @@ require('lazy').setup({
   },
   { 'nvim-lualine/lualine.nvim', opts = {} },
   {
+    'esmuellert/codediff.nvim',
+    cmd = 'CodeDiff',
+    keys = {
+      { '<leader>gd', '<cmd>CodeDiff<CR>', desc = 'Open git diff' },
+    },
+  },
+  {
     'nvim-tree/nvim-tree.lua',
     config = function()
       require('nvim-tree').setup({
