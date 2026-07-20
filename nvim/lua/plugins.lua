@@ -43,6 +43,15 @@ require('lazy').setup({
     'esmuellert/codediff.nvim',
     cmd = 'CodeDiff',
     opts = {
+      highlights = {
+        line_insert = '#12261e',
+        line_delete = '#25171c',
+        char_insert = '#1f6f43',
+        char_delete = '#6e1b1b',
+      },
+      diff = {
+        layout = "inline",
+      },
       explorer = {
         width = 30,
         view_mode = "tree",
