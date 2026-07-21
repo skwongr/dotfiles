@@ -42,6 +42,9 @@ require('lazy').setup({
   {
     'esmuellert/codediff.nvim',
     cmd = 'CodeDiff',
+    init = function()
+      vim.cmd('cnoreabbrev gshow CodeDiff HEAD~1 HEAD')
+    end,
     opts = {
       highlights = {
         line_insert = '#12261e',
