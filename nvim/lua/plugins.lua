@@ -161,6 +161,25 @@ require('lazy').setup({
     end,
   },
   {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    ft = { 'markdown' },
+    cmd = { 'RenderMarkdown' },
+    keys = {
+      { '<leader>mr', '<cmd>RenderMarkdown toggle<CR>', desc = 'Toggle Markdown rendering' },
+    },
+    opts = {
+      heading = {
+        sign = false,
+      },
+      code = {
+        sign = false,
+        width = 'block',
+        right_pad = 1,
+      },
+    },
+  },
+  {
     'folke/which-key.nvim',
     config = function()
       vim.o.timeout = true
