@@ -59,7 +59,14 @@ require('lazy').setup({
         width = 30,
         view_mode = "tree",
         focus_on_select = true,
-      }
+      },
+      keymaps = {
+        view = {
+          focus_explorer = "e",
+          next_hunk = "n",
+          prev_hunk = "N",
+        },
+      },
     },
     keys = {
       { '<leader>gd', '<cmd>CodeDiff<CR>', desc = 'Open git diff' },
